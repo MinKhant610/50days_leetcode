@@ -1,0 +1,18 @@
+Question link : https://leetcode.com/problems/add-digits/
+
+Solution :
+
+class Solution:
+    def addDigits(self, num: int) -> int:     
+        chstr = str(num)
+        add = 0
+        if len(chstr) == 1:
+            return num
+        while len(chstr) > 1:
+            for ch in chstr:
+                add += int(ch)
+            chstr = str(add)
+            if len(chstr) == 1:
+                break
+            add = 0
+        return add
